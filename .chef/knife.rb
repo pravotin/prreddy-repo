@@ -1,1 +1,1 @@
-cookbook_path [ '/home/local/ANT/prreddy/prreddy-repo/cookbooks' ]
+cookbook_path [ '/home/ubuntu/prreddy-repo/cookbooks' ]

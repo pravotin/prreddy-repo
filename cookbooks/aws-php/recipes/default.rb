@@ -6,7 +6,13 @@
 #
 # All rights reserved - Do Not Redistribute
 #
+
+include_recipe "mysql::client"
+include_recipe "mysql::server"
+include_recipe "nginx"
+
 if platform?("ubuntu") 
+  Chef::Log.error("PRREDDY: Found ubuntu packages #{node[:php][:packages]}")
   execute "apt-get update" do
     action :nothing
     command "apt-get update"
@@ -34,8 +40,8 @@ if platform?("ubuntu")
 
 end
 
-if platform?("rhel") 
-  Chef::Log.error("PRREDDY: Found packages #{node[:php][:packages]}")
+if platform?("amazon") 
+  Chef::Log.error("PRREDDY: Found amazon packages #{node[:php][:packages]}")
   include_recipe "php"
 end
 
